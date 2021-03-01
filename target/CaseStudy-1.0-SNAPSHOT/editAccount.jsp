@@ -510,7 +510,7 @@
                                             <label for="email" class=" form-control-label">email :</label>
                                         </div>
                                         <div class="col-12 col-md-9">
-                                            <input type="text" id="email" name="password"
+                                            <input type="email" id="email" name="password"
                                                    placeholder="Content" value="${account.email}"
                                                    class="form-control">
                                         </div>
@@ -520,7 +520,7 @@
                                             <label for="phoneNumber" class=" form-control-label">phone number :</label>
                                         </div>
                                         <div class="col-12 col-md-9">
-                                            <input type="text" id="phoneNumber" name="phoneNumber"
+                                            <input type="number" id="phoneNumber" name="phoneNumber"
                                                    placeholder="Content" value="${account.phoneNumber}"
                                                    class="form-control">
                                         </div>

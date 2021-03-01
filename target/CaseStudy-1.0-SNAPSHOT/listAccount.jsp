@@ -167,98 +167,16 @@
         <div class="menu-sidebar__content js-scrollbar1">
             <nav class="navbar-sidebar">
                 <ul class="list-unstyled navbar__list">
-                    <li class="has-sub">
-                        <a class="js-arrow" href="#">
-                            <i class="fas fa-tachometer-alt"></i>Dashboard</a>
-                        <ul class="list-unstyled navbar__sub-list js-sub-list">
-                            <li>
-                                <a href="./bootstrap/index.html">Dashboard 1</a>
-                            </li>
-                            <li>
-                                <a href="./bootstrap/index2.html">Dashboard 2</a>
-                            </li>
-                            <li>
-                                <a href="./bootstrap/index3.html">Dashboard 3</a>
-                            </li>
-                            <li>
-                                <a href="./bootstrap/index4.html">Dashboard 4</a>
-                            </li>
-                        </ul>
-                    </li>
+
                     <li>
                         <a href="./bootstrap/chart.html">
-                            <i class="fas fa-chart-bar"></i>Charts</a>
+                            <i class="fas fa-chart-bar"></i>Note</a>
                     </li>
                     <li class="active">
                         <a href="./bootstrap/table.html">
-                            <i class="fas fa-table"></i>Tables</a>
+                            <i class="fas fa-table"></i>Note Type</a>
                     </li>
-                    <li>
-                        <a href="./bootstrap/form.html">
-                            <i class="far fa-check-square"></i>Forms</a>
-                    </li>
-                    <li>
-                        <a href="./bootstrap/calendar.html">
-                            <i class="fas fa-calendar-alt"></i>Calendar</a>
-                    </li>
-                    <li>
-                        <a href="./bootstrap/map.html">
-                            <i class="fas fa-map-marker-alt"></i>Maps</a>
-                    </li>
-                    <li class="has-sub">
-                        <a class="js-arrow" href="#">
-                            <i class="fas fa-copy"></i>Pages</a>
-                        <ul class="list-unstyled navbar__sub-list js-sub-list">
-                            <li>
-                                <a href="./bootstrap/login.html">Login</a>
-                            </li>
-                            <li>
-                                <a href="./bootstrap/register.html">Register</a>
-                            </li>
-                            <li>
-                                <a href="./bootstrap/forget-pass.html">Forget Password</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="has-sub">
-                        <a class="js-arrow" href="#">
-                            <i class="fas fa-desktop"></i>UI Elements</a>
-                        <ul class="list-unstyled navbar__sub-list js-sub-list">
-                            <li>
-                                <a href="./bootstrap/button.html">Button</a>
-                            </li>
-                            <li>
-                                <a href="./bootstrap/badge.html">Badges</a>
-                            </li>
-                            <li>
-                                <a href="./bootstrap/tab.html">Tabs</a>
-                            </li>
-                            <li>
-                                <a href="./bootstrap/card.html">Cards</a>
-                            </li>
-                            <li>
-                                <a href="./bootstrap/alert.html">Alerts</a>
-                            </li>
-                            <li>
-                                <a href="./bootstrap/progress-bar.html">Progress Bars</a>
-                            </li>
-                            <li>
-                                <a href="./bootstrap/modal.html">Modals</a>
-                            </li>
-                            <li>
-                                <a href="./bootstrap/switch.html">Switchs</a>
-                            </li>
-                            <li>
-                                <a href="./bootstrap/grid.html">Grids</a>
-                            </li>
-                            <li>
-                                <a href="./bootstrap/fontawesome.html">Fontawesome Icon</a>
-                            </li>
-                            <li>
-                                <a href="./bootstrap/typo.html">Typography</a>
-                            </li>
-                        </ul>
-                    </li>
+
                 </ul>
             </nav>
         </div>
@@ -447,7 +365,6 @@
         <div class="main-content">
             <div class="section__content section__content--p30">
                 <div class="container-fluid">
-
                     <div class="row">
                         <div class="col-md-12">
                             <!-- DATA TABLE -->
