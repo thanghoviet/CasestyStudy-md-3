@@ -497,6 +497,16 @@
                                     </div>
                                     <div class="row form-group">
                                         <div class="col col-md-3">
+                                            <label for="use_name" class=" form-control-label">use name :</label>
+                                        </div>
+                                        <div class="col-12 col-md-9">
+                                            <input type="text" id="use_name" name="use_name"
+                                                   placeholder="Content" value="${account.use_name}"
+                                                   class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="row form-group">
+                                        <div class="col col-md-3">
                                             <label for="password" class=" form-control-label">password :</label>
                                         </div>
                                         <div class="col-12 col-md-9">
