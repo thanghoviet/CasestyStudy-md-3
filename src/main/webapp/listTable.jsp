@@ -475,14 +475,15 @@
                                     </button>
                                 </div>
                                 <div class="table-data__tool-right">
+
                                     <button class="au-btn au-btn-icon au-btn--green au-btn--small">
                                         <a href="/type">
-                                            Show  Note Type
+                                            Show Note Type
                                         </a>
                                     </button>
                                     <button class="au-btn au-btn-icon au-btn--green au-btn--small">
                                         <a href="/note?action=create">
-                                        add item
+                                            add item
                                         </a>
                                     </button>
                                     <div class="rs-select2--dark rs-select2--sm rs-select2--dark2">
@@ -525,7 +526,7 @@
                                             <td>
                                                 <span class="block-email"> <a href="/note?action=view&id=${note.id}">
 
-                                                        <c:out value="${note.title}" /></a></span>
+                                                        <c:out value="${note.title}"/></a></span>
                                             </td>
                                             <td class="desc"><c:out value="${note.noteType.getName_note()}"/></td>
                                             <td><c:out value="${note.datetime}"/></td>
@@ -539,9 +540,11 @@
                                                     </button>
                                                     <button class="item" data-toggle="tooltip" data-placement="top"
                                                             title="Delete">
-                                                        <a href="/note?action=delete&id=${note.id}"> <i class="zmdi zmdi-delete"></i></a>
+                                                        <a href="/note?action=delete&id=${note.id}"> <i
+                                                                class="zmdi zmdi-delete"></i></a>
                                                         <a href="#" onclick="deleteNote(${note.id})"
-                                                           class="delete" title="Delete"> <i class="zmdi zmdi-delete"></i></a>
+                                                           class="delete" title="Delete"> <i
+                                                                class="zmdi zmdi-delete"></i></a>
                                                     </button>
                                                 </div>
                                             </td>
@@ -567,7 +570,7 @@
         </div>
     </div>
     <script>
-        function deleteNote (id) {
+        function deleteNote(id) {
             let showMessage = confirm("Do you want to delete this note ?");
             if (showMessage) {
                 alert("Delete successfully!")

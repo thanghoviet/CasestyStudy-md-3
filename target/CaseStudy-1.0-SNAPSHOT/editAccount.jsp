@@ -12,12 +12,12 @@
     <meta name="keywords" content="au theme template">
 
     <!-- Title Page-->
-    <title>Tables</title>
+    <title>Forms</title>
 
     <!-- Fontfaces CSS-->
     <link href="./bootstrap/css/font-face.css" rel="stylesheet" media="all">
-    <link href="./bootstrap/vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
     <link href="./bootstrap/vendor/font-awesome-5/css/fontawesome-all.min.css" rel="stylesheet" media="all">
+    <link href="./bootstrap/vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
     <link href="./bootstrap/vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
 
     <!-- Bootstrap CSS-->
@@ -49,9 +49,9 @@
                         <img src="./bootstrap/images/icon/logo.png" alt="CoolAdmin"/>
                     </a>
                     <button class="hamburger hamburger--slider" type="button">
-                            <span class="hamburger-box">
-                                <span class="hamburger-inner"></span>
-                            </span>
+                                <span class="hamburger-box">
+                                    <span class="hamburger-inner"></span>
+                                </span>
                     </button>
                 </div>
             </div>
@@ -97,7 +97,7 @@
                         <a href="./bootstrap/map.html">
                             <i class="fas fa-map-marker-alt"></i>Maps</a>
                     </li>
-                    <li class="has-sub">
+                    <li class="./bootstrap/has-sub">
                         <a class="js-arrow" href="#">
                             <i class="fas fa-copy"></i>Pages</a>
                         <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
@@ -189,11 +189,11 @@
                         <a href="./bootstrap/chart.html">
                             <i class="fas fa-chart-bar"></i>Charts</a>
                     </li>
-                    <li class="active">
+                    <li>
                         <a href="./bootstrap/table.html">
                             <i class="fas fa-table"></i>Tables</a>
                     </li>
-                    <li>
+                    <li class="active">
                         <a href="./bootstrap/form.html">
                             <i class="far fa-check-square"></i>Forms</a>
                     </li>
@@ -272,11 +272,10 @@
             <div class="section__content section__content--p30">
                 <div class="container-fluid">
                     <div class="header-wrap">
-                        <form class="form-header" action="/note?action=search" method="GET">
-                            <input type="hidden" name="action" value="search">
-                            <input class="au-input au-input--xl" type="text" name="title" id="title"
-                                   placeholder="Search for Title..."/>
-                            <button class="au-btn--submit" type="submit" value="Search">
+                        <form class="form-header" action="" method="POST">
+                            <input class="au-input au-input--xl" type="text" name="search"
+                                   placeholder="Search for datas &amp; reports..."/>
+                            <button class="au-btn--submit" type="submit">
                                 <i class="zmdi zmdi-search"></i>
                             </button>
                         </form>
@@ -441,144 +440,132 @@
                 </div>
             </div>
         </header>
-        <!-- END HEADER DESKTOP-->
+        <!-- HEADER DESKTOP-->
 
-        <!-- MAIN CONTENT-->
+        <!-- MAIN CONTENT   -->
         <div class="main-content">
             <div class="section__content section__content--p30">
                 <div class="container-fluid">
-
                     <div class="row">
-                        <div class="col-md-12">
-                            <!-- DATA TABLE -->
-                            <h3 class="title-5 m-b-35">Note Table</h3>
-                            <div class="table-data__tool">
-                                <div class="table-data__tool-left">
-                                    <div class="rs-select2--light rs-select2--md">
-                                        <select class="js-select2" name="property">
-                                            <option selected="selected">All Properties</option>
-                                            <option value="">Option 1</option>
-                                            <option value="">Option 2</option>
-                                        </select>
-                                        <div class="dropDownSelect2"></div>
-                                    </div>
-                                    <div class="rs-select2--light rs-select2--sm">
-                                        <select class="js-select2" name="time">
-                                            <option selected="selected">Today</option>
-                                            <option value="">3 Days</option>
-                                            <option value="">1 Week</option>
-                                        </select>
-                                        <div class="dropDownSelect2"></div>
-                                    </div>
-                                    <button class="au-btn-filter">
-                                        <i class="zmdi zmdi-filter-list"></i>filters
-                                    </button>
+                        <div class="col-12 col-md-12">
+                            <h3 class="title-5 m-b-35">Note Manager</h3>
+                        </div>
+                        <div class="table-data__tool">
+                            <div class="table-data__tool-left">
+                                <a href="account"
+                                   class="au-btn au-btn-icon au-btn--green au-btn--small"> <i
+                                        class="zmdi zmdi-collection-item"></i>Back list Account
+                                </a>
+                            </div>
+                            <div>                                                                              </div>
+                            <div class="table-data__tool-right"></div>
+                        </div>
+                        <div class="table-data__tool">
+                            <div class="table-data__tool-left">
+                                <a href="type"
+                                   class="au-btn au-btn-icon au-btn--green au-btn--small"> <i
+                                        class="zmdi zmdi-collection-item"></i>Back List Note
+                                </a>
+                            </div>
+                            <div class="table-data__tool-right"></div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <c:if test="${message!=null}">
+                            <div class="col-12 col-md-12">
+                                <div class="alert alert-primary"><i>${message}</i></div>
+                            </div>
+                        </c:if>
+                    </div>
+                    <div class="row">
+                        <!-- FORM ADD-->
+                        <div class="col-12 col-md-12">
+                            <form action="" method="post" class="form-horizontal">
+                                <div class="card-header">
+                                    <strong>Edit Account</strong>
                                 </div>
-                                <div class="table-data__tool-right">
+                                <div class="card-body card-block">
+                                    <div class="row form-group">
+                                        <div class="col col-md-3">
+                                            <label for="name" class=" form-control-label">name :</label>
+                                        </div>
+                                        <div class="col-12 col-md-9">
+                                            <input type="text" id="name" name="name" placeholder="name"
+                                                   required value="${account.name}" class="form-control">
+                                            <input type="hidden" name="date" value="${account.use_name}">
+                                        </div>
+                                    </div>
+                                    <div class="row form-group">
+                                        <div class="col col-md-3">
+                                            <label for="password" class=" form-control-label">password :</label>
+                                        </div>
+                                        <div class="col-12 col-md-9">
+                                            <input type="text" id="password" name="password"
+                                                   placeholder="Content" value="${account.password}"
+                                                   class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="row form-group">
+                                        <div class="col col-md-3">
+                                            <label for="email" class=" form-control-label">email :</label>
+                                        </div>
+                                        <div class="col-12 col-md-9">
+                                            <input type="text" id="email" name="password"
+                                                   placeholder="Content" value="${account.email}"
+                                                   class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="row form-group">
+                                        <div class="col col-md-3">
+                                            <label for="phoneNumber" class=" form-control-label">phone number :</label>
+                                        </div>
+                                        <div class="col-12 col-md-9">
+                                            <input type="text" id="phoneNumber" name="phoneNumber"
+                                                   placeholder="Content" value="${account.phoneNumber}"
+                                                   class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="row form-group">
+                                        <div class="col col-md-3">
+                                            <label for="address" class=" form-control-label">address :</label>
+                                        </div>
+                                        <div class="col-12 col-md-9">
+                                            <input type="text" id="address" name="address"
+                                                   placeholder="Content" value="${account.address}"
+                                                   class="form-control">
+                                        </div>
+                                    </div>
 
-                                    <button class="au-btn au-btn-icon au-btn--green au-btn--small">
-                                        <a href="/type">
-                                            Show Note Type
+                                </div>
+                                <div class="card-footer">
+                                    <button type="submit" class="btn btn-primary btn-sm">
+                                        <i class="fa fa-dot-circle-o"></i> Submit
+                                    </button>
+                                    <button type="reset" class="btn btn-danger btn-sm">
+                                        <a href="note">
+                                            <i class="fa fa-ban"></i> Reset
                                         </a>
                                     </button>
-                                    <button class="au-btn au-btn-icon au-btn--green au-btn--small">
-                                        <a href="/note?action=create">
-                                            add item
-                                        </a>
-                                    </button>
-                                    <div class="rs-select2--dark rs-select2--sm rs-select2--dark2">
-                                        <select class="js-select2" name="type">
-                                            <option selected="selected">Export</option>
-                                            <option value="">Option 1</option>
-                                            <option value="">Option 2</option>
-                                        </select>
-                                        <div class="dropDownSelect2"></div>
-                                    </div>
                                 </div>
-                            </div>
-                            <div class="table-responsive table-responsive-data2">
-                                <table class="table table-data2">
-                                    <thead>
-                                    <tr>
-                                        <th>
-                                            <label class="au-checkbox">
-                                                <span class="au-checkmark"></span>
-                                            </label>
-                                        </th>
-                                        <th><a href="/note?action=sortId">STT</a></th>
-                                        <th><a href="/note?action=sort-Title">Tiêu Đề</a></th>
-                                        <th><a href="/note?action=sort-note-type">Loại Note</a></th>
-                                        <th><a href="/note?action=sort-Title">Thời gian</a></th>
-                                        <th></th>
-                                    </tr>
-                                    </thead>
-                                    <c:forEach var="note" items="${listNote}">
-                                        <tbody>
-                                        <tr class="spacer"></tr>
-                                        <tr class="tr-shadow">
-                                            <td>
-                                                <label class="au-checkbox">
-                                                    <input type="checkbox">
-                                                    <span class="au-checkmark"></span>
-                                                </label>
-                                            </td>
-                                            <td><c:out value="${note.id}"/></td>
-                                            <td>
-                                                <span class="block-email"> <a href="/note?action=view&id=${note.id}">
-
-                                                        <c:out value="${note.title}"/></a></span>
-                                            </td>
-                                            <td class="desc"><c:out value="${note.noteType.getName_note()}"/></td>
-                                            <td><c:out value="${note.datetime}"/></td>
-                                            <td>
-                                                <div class="table-data-feature">
-                                                    <button class="item" data-toggle="tooltip" data-placement="top"
-                                                            title="Edit">
-                                                        <a href="/note?action=edit&id=${note.id}">
-                                                            <i class="zmdi zmdi-edit"></i>
-                                                        </a>
-                                                    </button>
-                                                    <button class="item" data-toggle="tooltip" data-placement="top"
-                                                            title="Delete">
-                                                        <a href="/note?action=delete&id=${note.id}"> <i
-                                                                class="zmdi zmdi-delete"></i></a>
-                                                        <a href="#" onclick="deleteNote(${note.id})"
-                                                           class="delete" title="Delete"> <i
-                                                                class="zmdi zmdi-delete"></i></a>
-                                                    </button>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr class="spacer"></tr>
-                                        </tbody>
-                                    </c:forEach>
-                                </table>
-                            </div>
-                            <!-- END DATA TABLE -->
+                            </form>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-12">
                             <div class="copyright">
-                                <p>Copyright © 2018 Colorlib. All rights reserved. Template by <a
-                                        href="https://colorlib.com">Colorlib</a>.</p>
+                                <p>
+                                    Copyright © 2018 Colorlib. All rights reserved. Template by <a
+                                        href="https://colorlib.com">Colorlib</a>.
+                                </p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        <!-- END MAIN CONTENT-->
+        <!-- END PAGE CONTAINER-->
     </div>
-    <script>
-        function deleteNote(id) {
-            let showMessage = confirm("Do you want to delete this note ?");
-            if (showMessage) {
-                alert("Delete successfully!")
-                window.location = "/note?action=delete&id=" + id;
-            } else {
-            }
-        }
-    </script>
 
 </div>
 

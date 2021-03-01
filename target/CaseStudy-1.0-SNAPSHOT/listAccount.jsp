@@ -477,12 +477,12 @@
                                 <div class="table-data__tool-right">
 
                                     <button class="au-btn au-btn-icon au-btn--green au-btn--small">
-                                        <a href="/type">
+                                        <a href="/note">
                                             Show Note Type
                                         </a>
                                     </button>
                                     <button class="au-btn au-btn-icon au-btn--green au-btn--small">
-                                        <a href="/note?action=create">
+                                        <a href="/account?action=create">
                                             add item
                                         </a>
                                     </button>
@@ -505,14 +505,17 @@
                                                 <span class="au-checkmark"></span>
                                             </label>
                                         </th>
-                                        <th><a href="/note?action=sortId">STT</a></th>
-                                        <th><a href="/note?action=sort-Title">Tiêu Đề</a></th>
-                                        <th><a href="/note?action=sort-note-type">Loại Note</a></th>
-                                        <th><a href="/note?action=sort-Title">Thời gian</a></th>
+                                        <th>ID</th>
+                                        <th>Name</th>
+                                        <th>User Name</th>
+                                        <th>Password</th>
+                                        <th>Email</th>
+                                        <th>Phone Number</th>
+                                        <th>Address</th>
                                         <th></th>
                                     </tr>
                                     </thead>
-                                    <c:forEach var="note" items="${listNote}">
+                                    <c:forEach var="account" items="${accountList}">
                                         <tbody>
                                         <tr class="spacer"></tr>
                                         <tr class="tr-shadow">
@@ -522,27 +525,26 @@
                                                     <span class="au-checkmark"></span>
                                                 </label>
                                             </td>
-                                            <td><c:out value="${note.id}"/></td>
-                                            <td>
-                                                <span class="block-email"> <a href="/note?action=view&id=${note.id}">
-
-                                                        <c:out value="${note.title}"/></a></span>
-                                            </td>
-                                            <td class="desc"><c:out value="${note.noteType.getName_note()}"/></td>
-                                            <td><c:out value="${note.datetime}"/></td>
+                                            <td><c:out value="${account.id}"/></td>
+                                            <td><c:out value="${account.name}"/></td>
+                                            <td><c:out value="${account.use_name}"/></td>
+                                            <td><c:out value="${account.password}"/></td>
+                                            <td><c:out value="${account.email}"/></td>
+                                            <td><c:out value="${account.phoneNumber}"/></td>
+                                            <td><c:out value="${account.address}"/></td>
                                             <td>
                                                 <div class="table-data-feature">
                                                     <button class="item" data-toggle="tooltip" data-placement="top"
                                                             title="Edit">
-                                                        <a href="/note?action=edit&id=${note.id}">
+                                                        <a href="/account?action=edit&id=${account.id}">
                                                             <i class="zmdi zmdi-edit"></i>
                                                         </a>
                                                     </button>
                                                     <button class="item" data-toggle="tooltip" data-placement="top"
                                                             title="Delete">
-                                                        <a href="/note?action=delete&id=${note.id}"> <i
+                                                        <a href="/account?action=delete&id=${account.id}"> <i
                                                                 class="zmdi zmdi-delete"></i></a>
-                                                        <a href="#" onclick="deleteNote(${note.id})"
+                                                        <a href="#" onclick="deleteNote(${account.id})"
                                                            class="delete" title="Delete"> <i
                                                                 class="zmdi zmdi-delete"></i></a>
                                                     </button>

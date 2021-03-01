@@ -16,7 +16,7 @@ public class NoteDAO  {
     private final String DELETE_NOTE_BY_ID = "DELETE FROM `inotes`.`note` WHERE (`id` = ?);";
     private final String GET_NOTE_BY_ID = "SELECT n.*,nt.name_note as type_name FROM note n join note_type nt on n.type_id=nt.id where n.id=?;";
     private final String EDIT_NOTE_BY_ID = "UPDATE `inotes`.`note` SET `title` = ?, `content` = ?, `type_id` = ? WHERE (`id` = ?); ";
-    private final String SELECT_ALL_USERS = "SELECT n.*, t.name_note as note, t.description as descrip "+
+    private final String SELECT_ALL_NOTE = "SELECT n.*, t.name_note as note, t.description as descrip "+
             "FROM note n JOIN note_type t ON n.type_id = t.id order by n.id desc";
     private final String SORT_BY_ID = "SELECT n.*, t.name_note as note, t.description as descrip FROM note n "+
             "JOIN note_type t ON n.type_id = t.id order by n.id";
@@ -47,16 +47,16 @@ public class NoteDAO  {
         }
     }
 
-    public List<Note> searchByTitle(String title) throws SQLException {
+    public List<Note> searchByTitle(String name) throws SQLException {
         List<Note> notes = new ArrayList<>();
         try (Connection connection=getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement(SEARCH_NOTE_BY_TITLE)
         ) {
-            preparedStatement.setString(1, "%" + title + "%");
+            preparedStatement.setString(1, "%" + name + "%");
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
                 int id = resultSet.getInt("id");
-                String title1 = resultSet.getString("title");
+                String title = resultSet.getString("title");
                 String content = resultSet.getString("content");
                 Date datetime = resultSet.getDate("datetime");
                 int type_id = resultSet.getInt("type_id");
@@ -256,7 +256,7 @@ public class NoteDAO  {
         List<Note> notes = new ArrayList<>();
         List<NoteType> type = new ArrayList<>();
         try (Connection connection = getConnection();
-             PreparedStatement preparedStatement = connection.prepareStatement(SELECT_ALL_USERS)
+             PreparedStatement preparedStatement = connection.prepareStatement(SELECT_ALL_NOTE)
         ) {
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
